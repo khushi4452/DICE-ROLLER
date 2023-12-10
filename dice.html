@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dice roller</title>
+    <style>
+      body {
+        background-color: #ffb3b3;
+      }
+
+      .dice {
+        height: 150px;
+        display: block;
+        margin: 20px auto;
+      }
+
+      .btn-roll {
+        display: block;
+        margin: 30px auto;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: #ff4d4d;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .container {
+        width: 250px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+        margin-top: 50px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img src="one.png" alt="dice" id="dice" class="dice" />
+
+      <button type="button " class="btn-roll" onclick="rollDice()">
+        Roll the Dice
+      </button>
+    </div>
+    <script>
+      function rollDice() {
+        const min = 1;
+        const max = 7;
+
+        const num = Math.floor(Math.random() * (max - min)) + min;
+
+        const diceElement = document.getElementById("dice");
+
+        if (num === 1) {
+          diceElement.src = "one.png";
+        } else if (num === 2) {
+          diceElement.src = "two.png";
+        } else if (num === 3) {
+          diceElement.src = "three.png";
+        } else if (num === 4) {
+          diceElement.src = "four.png";
+        } else if (num === 5) {
+          diceElement.src = "five.png";
+        } else if (num === 6) {
+          diceElement.src = "six.png";
+        }
+      }
+    </script>
+  </body>
+</html>
